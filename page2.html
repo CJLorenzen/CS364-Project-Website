@@ -11,13 +11,10 @@
       <h1>Find the Highest and Lowest GDP in the Selected Year Ranges</h1>
       <h3 style="text-align: center;">
       <a href="../CS364-Project-Website/about.html">About</a>
-      <a href="../CS364-Project-Website/page1.html">Page 1</a> 
-      <a href="../CS364-Project-Website/page2.html">High-Low Query</a> 
+      <a href="../CS364-Project-Website/page2.html">Queries</a> 
       </h3>
 
-<<<<<<< HEAD
       <!-- form 1 -->
-=======
       <!-- REQUIREMENTS
         Users will have access to selections of various functions including but not limited to seeing
         countries with a positive or negative change in GDP, seeing countries with the highest or lowest
@@ -34,18 +31,16 @@
 
 
       <!-- Fulfills high-low req to select GDP, Population, GDPCC, for a single country given a range of years -->
-      <h3 style="text-align: center;padding-top: 50px;">Year Ranges:</h3>
->>>>>>> eb342e66c7ec20012f737b9077377e16d5626b8c
-      <form style="text-align: center;padding: 30px;border-style: solid;">
-	Year Ranges: <br>
+      <form style="text-align: center;padding: 30px;border-style: solid;" method="post" action="dbconnect.php">
+	Search: <br>
 	<a>Target Metric:</a>
-	<select>
+	<select name="target">
 	  <option value="GDP">GDP</option>
 	  <option value="Population">Population</option>
 	  <option value="GDPPC">GDPPC</option>
 	</select><br>
 	<a>Highest or Lowest?:</a>
-	<select>
+	<select name="highlow">
 	  <option value="highest">Highest</option>
 	  <option value="lowest">Lowest</option>
 	</select><br>
