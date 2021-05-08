@@ -69,15 +69,14 @@
       <h3 style="text-align: center;padding-top: 50px;">Highest/Lowest Countries Filtered By GDP/Population/GDPPC and Time Ranges</h3>
       <form action="./highLowRanges.php" style="text-align: left;padding: 30px;border-style: solid;">
         <a>Target Metric:</a>
-        <select>
-          <option value="GDP">GDP</option>
+        <select id = "metric" name = "metric">
           <option value="Population">Population</option>
           <option value="GDPPC">GDPPC</option>
         </select><br>
         <a>Highest or Lowest?:</a>
-        <select>
-          <option value="highest">Highest</option>
-          <option value="lowest">Lowest</option>
+        <select id = "direction" name = "direction">
+          <option value="DESC">Highest</option>
+          <option value="ASC">Lowest</option>
         </select><br>
         <a>Start Year:</a>
         <input type="number" id="startY" name="startY" min="0" max="2021"><br>
@@ -96,15 +95,14 @@
       <form action="./advancedFilter.php" style="text-align: left;padding: 30px;border-style: solid;">
         <!-- Metric -->
         <a>Metric</a>
-        <select>
-          <option value="GDP">GDP</option>
+        <select id = "metric" name = "metric">
           <option value="Population">Population</option>
           <option value="GDPPC">GDPPC</option>
           <option value="GloabGDPPercent">Relative GDP % of Gloabl GDP</option>
         </select>
         <!-- Logical Operators -->
         <a>Logical Operator</a>
-        <select>
+        <select >
           <option value="Greater Than">Greater Than</option>
           <option value="Greater Than or Equal To">Greater Than or Equal To</option>
           <option value="Equal To">Equal To</option>
