@@ -15,7 +15,7 @@ if ($mysqli -> connect_errno) {
 
 	echo "<p/>Query returned results<p/>";
 	while ($start_yr <= $end_yr) {
-	  $query = "SELECT * FROM `historicEconomic` WHERE name=".$cName." AND year=".$start_yr;
+	  $query = "SELECT * FROM `Country` WHERE name=".$cName." AND year=".$start_yr;
 
 	  $result = mysqli_query($con, $query);
 

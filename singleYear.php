@@ -12,7 +12,7 @@ if ($mysqli -> connect_errno) {
 	  $cName = stripslashes($_GET['country']);
 	  $yr = stripslashes($_GET['year']);
 
-	  $query = "SELECT * FROM `historicEconomic` WHERE name=".$cName." AND year=".$yr;
+	  $query = "SELECT * FROM `Country` WHERE name=".$cName." AND year=".$yr;
 
 	  $result = mysqli_query($con, $query);
 
