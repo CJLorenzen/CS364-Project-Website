@@ -1,7 +1,7 @@
 <html>
   <body>
 	<?php
-$mysqli = new mysqli("localhost","my_user","my_password","my_db");
+$mysqli = new mysqli("localhost","student","CompSci364","historicEconomic");
 
 // Check connection
 if ($mysqli -> connect_errno) {
@@ -69,6 +69,6 @@ if ($mysqli -> connect_errno) {
 	  // Closing connection
 	  $link->close();
 	?>
-	<p/><a href="../CS364-Project-Website/page2.html">Back to main page.</a>
+	<p/><a href="../CS364-Project-Website/queries.html">Back to main page.</a>
   </body>
 </html>
