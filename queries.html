@@ -30,7 +30,7 @@
     <div>
       <h2></h2>
       <h3 style="text-align: center;padding-top: 50px;">Find Single-Year Data for a Selected Country</h3>
-      <form style="text-align: left;padding: 30px;border-style: solid;">
+      <form action="dbconnect.php" style="text-align: left;padding: 30px;border-style: solid;">
         <label for="country">Country:</label>
         <select id="country" name="country"></select>
         <label for="year">Year:</label>
@@ -58,7 +58,7 @@
       <!-- Find Multi-Year Data for a Selected Country -->
     <div>
       <h3 style="text-align: center;padding-top: 50px;">Find Multi-Year Data for a Selected Country</h3>
-      <form style="text-align: left;padding: 30px;border-style: solid;">
+      <form action="dbconnect.php" style="text-align: left;padding: 30px;border-style: solid;">
         <label for="country">Country:</label>
         <select id="country" name="country"></select>
         <label for="startY">Start Year:</label>
@@ -94,7 +94,7 @@
     <!-- Fulfills high-low dropdown reqs to select GDP, Population, GDPCC, for a Selected Country given a range of years -->
     <div>
       <h3 style="text-align: center;padding-top: 50px;">Highest/Lowest Countries Filtered By GDP/Population/GDPPC and Time Ranges</h3>
-      <form style="text-align: left;padding: 30px;border-style: solid;">
+      <form action="dbconnect.php" style="text-align: left;padding: 30px;border-style: solid;">
         <a>Target Metric:</a>
         <select>
           <option value="GDP">GDP</option>
@@ -147,7 +147,7 @@
     <!-- Display countries based on set criteria -->
     <div>
       <h3 style="text-align: center;padding-top: 50px;">Filter Countries By</h3>
-      <form style="text-align: left;padding: 30px;border-style: solid;">
+      <form action="dbconnect.php" style="text-align: left;padding: 30px;border-style: solid;">
         <!-- Metric -->
         <a>Metric</a>
         <select>
