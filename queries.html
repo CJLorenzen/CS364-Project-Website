@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Find the Highest and Lowest GDP in the Selected Year Ranges</title>
+  <link rel="stylesheet" href = "website.css">
+   </head>
+
+   <body>
+      <h1>Queries</h1>
+      <h3 style="text-align: center;">
+        <a href="../CS364-Project-Website/about.html">About</a>
+        <a href="../CS364-Project-Website/queries.html">Queries</a> 
+      </h3>
+      <a style="text-align: left">Query options range from beginner to advanced as ordered from the top to bottom of the page.</a>
+      <!-- REQUIREMENTS (pulled from proposal and reformatted into bullets)
+        Users will have access to selections of various functions including but not limited to:
+          see countries with a positive or negative change in GDP
+          see countries with the highest or lowest GDP in a certain range of years, and determining GDPPC
+          access data using dropdown selections to select countries, ranges of years, and operations to be performed on the data
+          able to query based on the year, year ranges, country, and other attributes
+
+        Example queries include but are not limited to:
+          select all countries between 1960-1970 that had a GDP worth more than 5% of the global GDP
+          display every country with an increasing GDPPC from the past year specified
+          query countries' average population growth over some time period.
+      -->
+
+    <!-- Find Single-Year Data for a Selected Country -->
+    <div>
+      <h2></h2>
+      <h3 style="text-align: center;padding-top: 50px;">Find Single-Year Data for a Selected Country</h3>
+      <form style="text-align: left;padding: 30px;border-style: solid;">
+        <label for="country">Country:</label>
+        <select id="country" name="country"></select>
+        <label for="year">Year:</label>
+        <input type="number" id="year" name="year" min = "0" max="2021"><br>
+        <input type="submit" value="Submit">
+      </form>
+      <table style="width:50%; text-align:center;">
+      <tr>
+        <th>Country</th>
+        <th>Year</th>
+        <th>GDP</th>
+        <th>Population</th> 
+        <th>GDP per Capita</th>
+      </tr>
+      <tr>
+        <td>United States</td>
+        <td>2021</td> 
+        <td>0.00</td>
+        <td>0.00</td>
+        <td>0.00</td> 
+      </tr>
+      </table>
+    </div>
+
+      <!-- Find Multi-Year Data for a Selected Country -->
+    <div>
+      <h3 style="text-align: center;padding-top: 50px;">Find Multi-Year Data for a Selected Country</h3>
+      <form style="text-align: left;padding: 30px;border-style: solid;">
+        <label for="country">Country:</label>
+        <select id="country" name="country"></select>
+        <label for="startY">Start Year:</label>
+        <input type="number" id="startY" name="startY" min="0" max="2021">
+        <label for="endY">End Year:</label>
+        <input type="number" id="endY" name="endY" min = "0" max="2021">
+        <input type="submit" value="Submit">
+      </form>
+      <table style="width:50%; text-align:center;">
+      <tr>
+        <th>Country</th>
+        <th>Start Year</th> 
+        <th>End Year</th>
+        <th>Average GDP</th>
+        <th>Average Population</th>
+        <th>Average GPD per Capita</th> 
+        <th>GDP Change</th>
+        <th>GDP Avg Growth</th>
+      </tr>
+      <tr>
+        <td>United States</td>
+        <td>1776</td> 
+        <td>2021</td>
+        <td>0.00</td>
+        <td>0.00</td>
+        <td>0.00</td> 
+        <td>0.00</td>
+        <td>0.00</td>
+      </tr>
+      </table>  
+    </div>
+
+    <!-- Fulfills high-low dropdown reqs to select GDP, Population, GDPCC, for a Selected Country given a range of years -->
+    <div>
+      <h3 style="text-align: center;padding-top: 50px;">Highest/Lowest Countries Filtered By GDP/Population/GDPPC and Time Ranges</h3>
+      <form style="text-align: left;padding: 30px;border-style: solid;">
+        <a>Target Metric:</a>
+        <select>
+          <option value="GDP">GDP</option>
+          <option value="Population">Population</option>
+          <option value="GDPPC">GDPPC</option>
+        </select><br>
+        <a>Highest or Lowest?:</a>
+        <select>
+          <option value="highest">Highest</option>
+          <option value="lowest">Lowest</option>
+        </select><br>
+        <a>Start Year:</a>
+        <input type="number" id="startY" name="startY" min="0" max="2021"><br>
+        <a>End Year:</a>
+        <input type="number" id="endY" name="endY" min = "0" max="2021"><br>
+        <a>Number of Results:</a>
+        <input type="number" id="count" name="count" min="0" max="170"><br>
+
+        <input type="submit" value="Submit">
+      </form>
+      <!-- place holder for sql query data returned -->
+      <table style="width:50%">
+      <tr>
+        <th>Countries</th>
+        <th>Target Metric</th> 
+      </tr>
+      <tr>
+        <td>1:</td>
+        <td>0.00</td> 
+      </tr>
+      <tr>
+        <td>2:</td>
+        <td>0.00</td> 
+      </tr>
+      <tr>
+        <td>3:</td>
+        <td>0.00</td> 
+      </tr>
+      <tr>
+        <td>4:</td>
+        <td>0.00</td> 
+      </tr>
+      <tr>
+        <td>5:</td>
+        <td>0.00</td> 
+      </tr>
+      </table>
+    </div>
+
+    <!-- Display countries based on set criteria -->
+    <div>
+      <h3 style="text-align: center;padding-top: 50px;">Filter Countries By</h3>
+      <form style="text-align: left;padding: 30px;border-style: solid;">
+        <!-- Metric -->
+        <a>Metric</a>
+        <select>
+          <option value="GDP">GDP</option>
+          <option value="Population">Population</option>
+          <option value="GDPPC">GDPPC</option>
+          <option value="GloabGDPPercent">Relative GDP % of Gloabl GDP</option>
+        </select>
+        <!-- Logical Operators -->
+        <a>Logical Operator</a>
+        <select>
+          <option value="Greater Than">Greater Than</option>
+          <option value="Greater Than or Equal To">Greater Than or Equal To</option>
+          <option value="Equal To">Equal To</option>
+          <option value="Not Equal To">Not Equal To</option>
+          <option value="Less Than">Less Than</option>
+          <option value="Less Than or Equal To">Less Than or Equal To</option>
+        </select>
+        <!-- Comparasion Value -->
+        <label for="compVal">Comparision Value</label>
+        <input type="text" id="compVal" name="comparisionVal"><br>
+        
+        <!-- Time Period -->
+        <label for="startY">Start Year:</label>
+        <input type="number" id="startY" name="startY" min="0" max="2021">
+        <label for="endY">End Year:</label>
+        <input type="number" id="endY" name="endY" min = "0" max="2021"><br>
+
+        <input type="submit" value="Submit">
+      </form>    
+    </div>
+ </body>
+</html>
